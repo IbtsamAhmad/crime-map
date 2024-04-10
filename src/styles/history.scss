@@ -1,0 +1,209 @@
+   .list-popContent {
+       border-radius: 0px;
+       border-left: 20px solid rgba(255, 255, 255, 0);
+       width: 140px;
+       cursor: pointer;
+       box-shadow: rgba(204, 204, 204, 0.5) 0px 4px 8px 0px;
+       border-radius: 10px;
+       border: none;
+
+       p {
+           color: rgb(107, 114, 128);
+           margin-bottom: 0px;
+           font-weight: 500;
+           padding: 11px 11px;
+       }
+
+   }
+
+   .history-page-container {
+       .history-header {
+           background-color: rgb(255, 255, 255);
+           padding: 40px 0px;
+           justify-content: flex-start;
+           border-top: 1px solid rgb(231, 233, 235);
+           border-radius: 0px;
+           border-bottom: 1px solid rgb(231, 233, 235);
+           width: calc(100% - 0px);
+           margin: 0px;
+
+           h1 {
+               font-size: 30px;
+               font-weight: 600;
+               color: rgb(17, 24, 39);
+               margin: 0px 30px;
+           }
+
+           p {
+               font-size: 19px;
+               font-weight: 400;
+               color: rgb(107, 114, 128);
+               margin: 0px 30px;
+           }
+       }
+
+
+       .history-content-container {
+           padding: 40px;
+           background-color: rgb(249, 249, 250);
+
+           h2 {
+               font-size: 23px;
+               font-weight: 600;
+               color: rgb(17, 24, 39);
+           }
+
+           p {
+               font-size: 15px;
+               font-weight: 400;
+               color: rgb(107, 114, 128);
+           }
+
+           .history-previous-lists {
+               box-shadow: rgba(204, 204, 204, 0.2) 0px 1px 2px 0px;
+               padding: 35px 0px 30px;
+               background-color: rgb(255, 255, 255);
+               border-radius: 10px;
+
+               .history-list-header {
+                   display: flex;
+                   padding: 0px 40px 12px;
+
+                   h2 {
+                       font-size: 15px;
+                       font-weight: 600;
+                       color: rgb(17, 24, 39);
+                       width: 150px;
+                   }
+
+                   h3 {
+                       font-size: 15px;
+                       font-weight: 600;
+                       color: rgb(17, 24, 39);
+
+                   }
+
+               }
+
+               .previous-list {
+                   display: flex;
+                   padding: 20px 40px;
+                   position: relative;
+                   border-top: 1px solid rgb(241, 242, 244);
+
+                   .dates-col {
+                       p {
+                           font-size: 15px;
+                           font-weight: 400;
+                           color: rgb(17, 24, 39);
+                           width: 100px;
+                       }
+                   }
+
+                   .history-list-col {
+
+                       p {
+                           margin-left: 47px;
+                           font-size: 15px;
+                           font-weight: 400;
+                           color: rgb(107, 114, 128);
+                       }
+                   }
+
+                   .list-popOver {
+                       position: absolute;
+                       top: 0;
+                       right: 0;
+                       background: none;
+                       outline: none;
+                       border: none;
+                       cursor: pointer;
+                   }
+
+
+                   &:hover {
+                       background: rgba(104, 16, 199, 0.1);
+                   }
+               }
+           }
+       }
+   }
+
+   .modal-header {
+       border: none !important;
+    width: 850px !important;
+        background: #fff;
+   }
+
+   .historyModal-container {
+       background-color: rgb(255, 255, 255);
+       padding: 10px 30px 30px;
+width: 850px !important;
+       //    width: 860px;
+       h3 {
+           font-size: 23px;
+           font-weight: 600;
+           margin-bottom: 0;
+           color: rgb(17, 24, 39);
+           margin-top: -35px;
+           margin-bottom: 5px;
+       }
+
+       p {
+           font-size: 15px;
+           font-weight: 400;
+           color: rgb(107, 114, 128);
+       }
+
+       .historyLetter-container {
+           border-style: solid;
+           border-width: 1px;
+           border-color: rgb(229, 232, 235);
+           border-radius: 6px;
+           padding: 10px 10px 2px;
+           min-height: 600px;
+           height: 600px;
+           overflow: scroll;
+
+           h2 {
+               font-size: 19px;
+               font-weight: 600;
+               color: rgb(17, 24, 39);
+               min-height: 45px;
+               margin-bottom: 0px;
+           }
+
+           h1 {
+               font-size: 19px;
+               font-weight: 600;
+               color: rgb(17, 24, 39);
+               margin: 50px 0px 0px;
+               min-height: 45px;
+           }
+
+           p {
+               font-size: 15px;
+               font-weight: 400;
+               color: rgb(17, 24, 39);
+           }
+
+       
+       }
+                   .modal-close-btn {
+                       background: none rgb(194, 255, 80);
+                       border: none;
+                       outline: line;
+                       font-size: 14px;
+                       font-weight: 400;
+                       color: rgb(29, 29, 29);
+                       border-radius: 6px;
+                       opacity: 1;
+                       cursor: pointer;
+                       min-height: 40px;
+                       display: block;
+                       margin-left: auto;
+                       margin-right: auto;
+                       width: 280px;
+                       margin-top: 20px;
+                   }
+   }

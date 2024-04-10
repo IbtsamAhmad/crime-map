@@ -1,0 +1,285 @@
+.cover-letter-container {
+    .cover-heading-container {
+        background-color: rgb(101, 16, 193);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 44px 0 32px 0;
+
+        .cover-heading-content {
+        width: 860px;
+
+            h1 {
+                font-size: 30px;
+                font-weight: 600;
+                color: #fff;
+            }
+
+            h2 {
+                font-size: 19px;
+                font-weight: 400;
+                color: #fff;
+                line-height: 27px;
+            }
+        }
+    }
+}
+
+.aboutCover-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h2 {
+        margin-top: 62px;
+        font-size: 30px;
+        font-weight: 400;
+        color: #111827;
+    }
+
+    .about-form {
+        width: 800px;
+        text-align: left;
+        position: relative;
+        .textCount{
+        //     position: absolute;
+        //  bottom: 98px;
+        //   z-index: 10;
+        //   right: 0;
+        // font-size: 13px;
+        // font-weight: 400;
+        // color: rgb(156, 163, 175);
+            font-size: 13px;
+                font-weight: 400;
+                color: rgb(156, 163, 175);
+                text-align: right;
+                margin-top: 10px;
+        }
+        .textCountTow{
+    // position: absolute;
+        // bottom: 98px;
+        // z-index: 10;
+        // right: 0;
+        font-size: 13px;
+        font-weight: 400;
+        color: rgb(156, 163, 175);
+        text-align: right;
+        margin-top: 10px;
+        }
+
+        .description-list {
+            padding: 15px 0;
+            border: 1px solid rgb(226, 226, 226);
+            border-left: 0;
+            border-right: 0;
+
+            h3 {
+                font-size: 15px;
+                font-weight: 700;
+                color: #6b7280;
+                margin-bottom: 30px;
+            }
+
+            ul {
+                // list-style-image: url("../../public/assets/list.png");
+                list-style-type: none;
+                padding-left: 0;
+                li {
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #3f4254;
+                        margin-bottom: 5px;
+                    img{
+                        padding-right: 8px;
+                    }
+                }
+            }
+
+            p {
+                font-size: 13px;
+                font-weight: 500;
+                color: #6510c1;
+            }
+        }
+
+        .description-buttons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 80px;
+            .description-btn {
+                     margin-right: 25px;
+                    display: flex;
+                     align-items: center;
+                     justify-content: center;;
+                    margin-top: 50px;
+                    background: rgb(194, 255, 80);
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #1d1d1d;
+                    text-align: center;
+                    border-radius: 6px;
+                    min-height: 45px;
+                    border: none;
+                    width: 150px;
+            
+                    &:hover {
+                        background: rgb(153, 224, 20);
+                    }
+                }
+        }
+
+        .form-label {
+            font-size: 15px;
+            font-weight: 500;
+            color: #111827;
+        }
+
+        .aboutName {
+            margin-top: 30px;
+        }
+
+        textarea {
+            min-height: 300px;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .about-btn {
+            margin-right: auto;
+            margin-left: auto;
+             display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            background: rgb(194, 255, 80);
+            font-size: 15px;
+            font-weight: 400;
+            color: #1d1d1d;
+            text-align: center;
+            border-radius: 6px;
+            min-height: 45px;
+            border: none;
+            width: 150px;
+            margin-bottom: 60px;
+
+            &:hover {
+                background: rgb(153, 224, 20);
+            }
+        }
+    }
+}
+
+.progress-container {
+    padding-top: 40px;
+        background-color: rgb(249, 249, 250);
+}
+
+
+
+
+
+
+.indexedStep {
+    background-color: rgb(229, 232, 235);
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+    color: white;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(229, 232, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.indexedStep.accomplished {
+    background-color: rgb(101, 16, 193);
+    color: white;
+    border-style: none;
+}
+
+
+.RSPBprogressBar {
+    width: 45%;
+    height: 5px !important;
+    line-height: 1;
+    border-radius: 10px;
+    position: relative;
+    background-color: rgb(207, 207, 207);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 0;
+    margin: 20px auto;
+}
+
+// 
+
+.RSPBprogressBar .RSPBstep {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    position: absolute;
+    transform: translateX(-50%);
+    transition-property: all;
+    transition-timing-function: ease;
+
+}
+
+.RSPBprogressBar .RSPBprogressBarText {
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    font-size: 15px;
+    font-weight: 600;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.title-one {
+    position: absolute;
+    top: 147%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #9ca3af;
+    z-index: 10;
+    font-size: 13px;
+    font-weight: 500;
+    width: 130px;
+    text-align: center;
+    width: 210px;
+}
+
+.indexedStep.accomplished .title-one {
+    color: rgb(101, 16, 193);
+    border-style: none;
+}
+
+.RSPBprogressBar .RSPBprogression {
+    position: absolute;
+    transition: width 0.3s ease;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: rgb(101, 16, 193) !important;
+    z-index: -1;
+}
+
+
+
+// @media screen and (max-width: 480px) {
+//     .indexedStep {
+//         width: 15px;
+//         height: 15px;
+//         font-size: 6px;
+//     }
+// }

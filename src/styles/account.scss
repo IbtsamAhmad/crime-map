@@ -1,0 +1,203 @@
+.account-setting-container {
+    background-color: rgb(249, 249, 250);
+    height: 90vh;
+    overflow: hidden;
+    .account-heading-container {
+        background-color: rgb(255, 255, 255);
+        border-top: 1px solid rgb(231, 233, 235);
+        border-bottom: 1px solid rgb(231, 233, 235);
+        padding: 40px 0px;
+    }
+    .account-heading {
+        margin-left: 20%;
+        font-size: 30px;
+        font-weight: 600;
+        color: rgb(17, 24, 39);
+        max-width: 1200px;
+        width: calc(100% - 0px);
+    }
+    .tabs-container {
+        display: grid;
+        grid-template-columns: 1.16fr 1.5fr 0.5fr;
+        gap: 30px;
+        margin: 50px 0px;
+        .active {
+            background-color: rgba(101, 16, 193, 0.063) !important;
+            color: rgb(101, 16, 193) !important;
+            border-radius: 10px;
+
+            svg {
+                color: rgb(101, 16, 193) !important;
+            }
+        }
+
+        .nav-tabs {
+            flex-direction: column;
+            align-items: end;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: rgb(204 204 204 / 20%) 0px 1px 2px 0px;
+            padding: 20px 30px;
+            border: none;
+            width: 300px;
+            height: 150px;
+            margin-left: auto;
+            .nav-link {
+                padding: 0px 20px;
+                font-size: 15px;
+                font-weight: 500;
+                color: rgb(156, 163, 175);
+                height: 49px;
+
+                border: none;
+                outline: none;
+                display: flex;
+                align-items: center;
+                width: 240px;
+                svg {
+                    margin-right: 13px;
+                    margin-left: -5px;
+                }
+
+                &:nth-child(1) {
+                    margin-top: 5px;
+                }
+            }
+        }
+        .account-content {
+            background: rgb(249, 249, 250) !important;
+
+            h1 {
+                font-size: 23px;
+                font-weight: 600;
+                color: rgb(17, 24, 39);
+                line-height: 1.4;
+            }
+
+            .description {
+                font-size: 15px;
+                font-weight: 400;
+                color: rgb(107, 114, 128);
+                margin-top: -7px;
+            }
+
+            .account-form {
+                padding: 15px;
+                background: white !important;
+                border-radius: 10px;
+                box-shadow: rgb(204 204 204 / 20%) 0px 1px 2px 0px;
+                padding: 25px 40px;
+
+                .email-group {
+                    border-bottom: 1px solid rgb(204 204 204 / 20%);
+                    padding: 10px 0px;
+
+                }
+
+                .password-group {
+                    // margin-top: -19px;
+                    // padding: 10px 0px;
+                    padding-top: 10px;
+                }
+
+                .form-label {
+                    font-size: 15px;
+                    font-weight: 600;
+                    color: rgb(17, 24, 39);
+                  
+                }
+
+                input {
+                    border: none;
+                    outline: none;
+                    margin-left: 11%;
+                        &:active,
+                            &:focus {
+                                border: none !important;
+                            }
+                }
+
+            }
+        }
+
+        .profile-content {
+            background: rgb(249, 249, 250) !important;
+            .profile-img{
+            margin-top: -12px;
+            width: 145px;
+                height: 145px;
+                border-radius: 50%;
+                // margin-bottom: 14px;
+            }
+
+            h1 {
+                font-size: 23px;
+                font-weight: 600;
+                color: rgb(17, 24, 39);
+                line-height: 1.4;
+            }
+
+            .description {
+                font-size: 15px;
+                font-weight: 400;
+                color: rgb(107, 114, 128);
+                margin-top: -7px;
+            }
+
+            .profile-form {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                background-color: rgb(255, 255, 255);
+                width: calc(100% - 0px);
+                border-radius: 10px;
+                box-shadow: rgb(204 204 204 / 20%) 0px 1px 2px 0px;
+                padding: 40px;
+                .profileName{
+               width: 50%;
+                margin-top: 20px;
+                }
+                .form-label{
+                        font-size: 13px;
+                            font-weight: 500;
+                            color: #6b7280;
+                }
+                .profile-input {
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #111827;
+                    border-style: solid;
+                        border-width: 1px;
+                        border-color: #e5e8eb;
+                        border-radius: 6px;
+                            &:active, &:focus {
+                                    border: none !important;
+                                }
+               
+                }
+                .profileBtn{
+                        display: flex;
+                            align-items: flex-end;
+                            justify-content: flex-end;
+                            width: 400px;
+                }
+                .profileSubmit {
+                     margin-top: 30px;
+                     margin-left: auto;
+                     margin-right: 0;
+                    //     margin-left: 28%;
+                    background: none rgb(194, 255, 80);
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #1d1d1d;
+                    text-align: center;
+                    border-radius: 6px;
+                    border: none;
+                    padding: 10px;
+                }
+            }
+
+        }
+    }
+}

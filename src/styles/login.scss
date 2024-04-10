@@ -1,0 +1,233 @@
+.login-container {
+    height: 100vh;
+    overflow: hidden;
+
+    .loginColOne-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .logo {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            max-width: 153px;
+            width: 153px;
+        }
+
+        .login-form {
+            border: 1px solid#e5e8eb;
+            border-radius: 6px;
+            max-width: 420px;
+            width: calc(100% - 0px);
+            flex-direction: column;
+            justify-content: flex-start;
+            display: flex;
+            padding: 0 30px 30px 30px;
+
+            .form-check-input:checked {
+                background-color: rgb(101, 16, 193);
+                border-color: rgb(101, 16, 193);
+            }
+
+            .or-container {
+                position: relative;
+                margin-top: 30px;
+                margin-bottom: 20px;
+
+                .line {
+                    position: absolute;
+                    top: 27%;
+                    width: 100%;
+                    width: calc(100% - 0px);
+                    height: 1px;
+                    background-color: rgb(229, 232, 235);
+                }
+
+                p {
+                    background-color: rgb(255, 255, 255);
+                    width: 25px;
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #111827;
+                    position: relative;
+                    z-index: 2;
+                    // display: block;
+                    margin: -5px auto 0 auto;
+                    text-align: center;
+                }
+            }
+
+            .forgot-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .form-check-label {
+                    font-size: 13px;
+                }
+
+                .forgot {
+                    font-weight: 400;
+                    color: rgb(17, 24, 39);
+                    text-align: right;
+                    background: none transparent;
+                    border: none;
+                    font-size: 13px;
+                    padding: 0;
+
+                }
+            }
+
+            h1 {
+                font-weight: 700;
+                font-size: 30px;
+                color: #111827;
+                margin-top: 30px;
+                margin-right: 30px;
+                margin-bottom: 12px;
+            }
+
+            h2 {
+             font-size: 15px;
+            font-weight: 400;
+            color: #6b7280;
+            line-height: 22px;
+            margin-top: 8px;
+            }
+
+
+            .gmail-btn {
+                margin-top: 44px;
+                background: none rgb(210, 71, 54);
+                font-size: 15px;
+                font-weight: 600;
+                color: #fff;
+                text-align: center;
+                padding: 12px 0;
+                border-radius: 6px;
+                width: calc(100% - 0px);
+                height: 42px;
+                border: none;
+            }
+
+            .form-label {
+                font-size: 13px;
+                font-weight: 500;
+                color: #6b7280;
+            }
+
+            .login-label-two {
+                margin-top: 18px;
+                margin-bottom: 20px;
+            }
+
+            .formBasicEmail {
+                border: 1px solid#e5e8eb;
+                border-radius: 6px;
+                font-size: 15px;
+                font-weight: 400;
+                color: #111827;
+                padding: 0 8px;
+                height: 40px;
+            }
+       
+            .login-in-btn {
+                height: 40px;
+                background: none rgb(153, 224, 20);
+                color: rgb(29, 29, 29);
+                font-size: 15px;
+                font-weight: 400;
+                text-align: center;
+                width: calc(100% - 0px);
+                border-radius: 6px;
+                border: none;
+            }
+
+            .login-footer {
+                display: block;
+                margin: 0 auto;
+                margin-top: 16px;
+
+                span {
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: #6b7280;
+                    cursor: pointer;
+                }
+
+                .signup-two {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                .terms {
+                    color: rgb(17, 24, 39);
+                }
+            }
+                  .reset-footer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                    .reset-cancel-btn {
+                            font-size: 15px;
+                            font-weight: 600;
+                            color: #6b7280;
+                            text-align: center;
+                            border-radius: 6px;
+                            min-height: 40px;
+                            border: none;
+                            background: none rgb(241, 242, 243);
+                                width: 166px;
+                        }
+                        .reset-btn {
+                            background: rgb(194, 255, 80);
+                            font-size: 15px;
+                            font-weight: 400;
+                            color: #1d1d1d;
+                            text-align: center;
+                            border-radius: 6px;
+                            min-height: 40px;
+                            border: none;
+                             width: 166px;
+                             &:hover{
+                            background: rgb(153, 224, 20);
+                             }
+                        }
+                  }
+          
+
+
+        }
+    }
+
+    .login-colTwo {
+        background-color: rgb(101, 16, 193);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+
+        .loginColTwo-content {
+            max-width: 430px;
+
+            h2 {
+                font-size: 19px;
+                font-weight: 600;
+                color: #fff;
+                line-height: 2.4rem;
+            }
+
+            p {
+                margin-top: 40px;
+                font-size: 15px;
+                font-weight: 400;
+                color: #fff;
+                line-height: 1.4rem;
+            }
+        }
+    }
+}

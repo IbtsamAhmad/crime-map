@@ -1,0 +1,78 @@
+.homeNavbar-container {
+        background-color: #6810c7;
+    .navbar {
+        width: 100%;
+        max-width: 1200px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        background: transparent !important;
+        img{
+        width: 192px;
+        height: 42px;
+        }
+        .navbar-brand{
+                display: contents;
+        }
+        .nav-divider{
+            width: 1px;
+                height: 22px;
+                margin-right: 25px;
+                margin-left: 15px;
+                background-color: #e4ebf3;
+        }
+        .nav-link{
+            margin-right: 5px;
+                margin-left: 5px;
+                padding: 5px 10px;
+                color: rgba(255, 255, 255, .8);
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: .25px;
+                text-decoration: none;
+        }
+    }
+    .nav-login-btn{
+    margin-left: 20px;
+        padding: 12px 25px;
+        border-radius: 10px;
+        background-color: #c2ff50;
+        color: #1d1d1d;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border: none;
+            &:hover {
+                    background: rgb(153, 224, 20);
+                        color: #1d1d1d;
+                }
+    }
+    .nav-sign-btn{
+       margin-left: 10px;
+        padding: 12px 25px;
+        border-radius: 10px;
+        background-color: #c2ff50;
+        color: #1d1d1d;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;border: none;
+            &:hover {
+                    background: rgb(153, 224, 20);
+                        color: #1d1d1d;
+                }
+    }
+    .navbar-nav{
+        justify-content: flex-end;
+            margin-left: auto;
+                align-items: center;
+                    padding-right: 17px;
+    }
+          .me-auto  {
+            margin-right: 0 !important;
+          }
+}
