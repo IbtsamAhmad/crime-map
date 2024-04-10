@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Button , Select} from "antd";
-import MyMapComponent from "../Components/Header/MapComponent/Map";
+import MyMapComponent from "../Components/MapComponent/Map";
 import { ReactComponent as Police } from "../assets/Police.svg";
 import { ReactComponent as User } from "../assets/User.svg";
 import { Link } from "react-router-dom";
