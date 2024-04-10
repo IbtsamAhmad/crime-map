@@ -17,14 +17,15 @@ const { TextArea } = Input;
 
 const Report = () => {
   const [clickedLatLng, setClickedLatLng] = useState(null);
-
+  const [form] = Form.useForm();
   const onFinish = (values) => {
-
     if (!clickedLatLng) {
       message.error("Please select the location of the crime");
     }
-    console.log("Location", clickedLatLng)
+    console.log("Location", clickedLatLng);
     console.log("Success:", values);
+    message.success("Report submitted successfully");
+    form.resetFields();
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -33,7 +34,7 @@ const Report = () => {
     <div className="report-container">
       <h1>Report Form</h1>
       <p>Report a crime near you</p>
-      <Row gutter={[32,32]} style={{marginTop:"30px"}}>
+      <Row gutter={[32, 32]} style={{ marginTop: "30px" }}>
         <Col lg={12}>
           <Place
             clickedLatLng={clickedLatLng}
@@ -54,6 +55,7 @@ const Report = () => {
             style={{
               maxWidth: 650,
             }}
+            form={form}
           >
             <Form.Item
               label="Type of Crime"
