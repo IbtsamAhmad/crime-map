@@ -20,7 +20,7 @@ const Report = () => {
   const [form] = Form.useForm();
   const onFinish = (values) => {
     if (!clickedLatLng) {
-      message.error("Please select the location of the crime");
+    return  message.error("Please select the location of the crime");
     }
     console.log("Location", clickedLatLng);
     console.log("Success:", values);
