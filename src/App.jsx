@@ -1,10 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./Components/Header/Header.jsx";
-import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
 import "./app.scss";
 import { ConfigProvider } from "antd";
 import Report from "./pages/Report.jsx";
@@ -12,6 +18,8 @@ import Home from "./pages/Home.jsx";
 import Reports from "./pages/Reports.jsx";
 
 function App() {
+
+
   return (
     <>
       <Router>
@@ -56,5 +64,6 @@ function App() {
 
 export default App;
 
-
-{/* <LoadScript googleMapsApiKey="AIzaSyCTEWtP6KeqpC0-FWrdcfqd0r5_fY02oUY"></LoadScript> */}
+{
+  /* <LoadScript googleMapsApiKey="AIzaSyCTEWtP6KeqpC0-FWrdcfqd0r5_fY02oUY"></LoadScript> */
+}

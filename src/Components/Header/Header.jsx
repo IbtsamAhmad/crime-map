@@ -1,13 +1,33 @@
+import { useState, useEffect } from "react";
 import { FaSignInAlt, FaSignOutAlt, FaUser, FaFile } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState("")
   const navigate = useNavigate();
 
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");  
+   const crimeMapUser = localStorage.getItem("crimeMapUser");
+    if (token) {
+      setIsLoggedIn(true);
+      setUser(crimeMapUser)
+    }
+  }, []);
+
+
+
+
+
   const onLogout = () => {
+  localStorage.removeItem("token");  
+   localStorage.removeItem("crimeMapUser");
     navigate("/");
+    window.location.reload()
   };
-  const user = null;
+
 
   return (
     <header className="header">
@@ -15,16 +35,10 @@ function Header() {
         <Link to="/">Crime Map</Link>
       </div>
       <ul>
-        {user ? (
-          <li>
-            <button className="btn" onClick={onLogout}>
-              <FaSignOutAlt /> Logout
-            </button>
-          </li>
-        ) : (
+        {isLoggedIn ? (
           <>
-
-          <li>
+       
+            <li>
               <Link to="/dashboard">
                 <FaFile /> Crime Map
               </Link>
@@ -34,12 +48,21 @@ function Header() {
                 <FaFile /> Reports
               </Link>
             </li>
-          
-          <li>
+
+            <li>
               <Link to="/report">
                 <FaFile /> Report a crime
               </Link>
             </li>
+            <li>
+       
+              <button className="btn" onClick={onLogout}>
+              <FaSignOutAlt /> ({user}) Logout
+              </button>
+            </li>
+          </>
+        ) : (
+          <>
             <li>
               <Link to="/login">
                 <FaSignInAlt /> Login

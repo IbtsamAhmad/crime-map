@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import dayjs from 'dayjs';
 import {
   Button,
   Form,
@@ -11,21 +12,36 @@ import {
   message,
   Spin,
 } from "antd";
+import axios from "axios";
 import Place from "../Components/Place/Place";
+import { baseUrl } from "../constants/contants";
 
 const { TextArea } = Input;
 
 const Report = () => {
   const [clickedLatLng, setClickedLatLng] = useState(null);
   const [form] = Form.useForm();
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
     if (!clickedLatLng) {
     return  message.error("Please select the location of the crime");
     }
-    console.log("Location", clickedLatLng);
-    console.log("Success:", values);
-    message.success("Report submitted successfully");
-    form.resetFields();
+    const token = localStorage.getItem('token'); 
+    const crimeReportUrl = baseUrl + 'crime/report';
+    const apiPayload = { ...values , time:"13:20", date: dayjs(values.date).format('YYYY-MM-DD'), lat: `${clickedLatLng.lat}`, lng: `${clickedLatLng.lng}`};
+
+    const reportResponse = await axios.post(crimeReportUrl, apiPayload, {
+      headers: {
+        Authorization: `Bearer ${token}` 
+      }
+    });
+
+    if (reportResponse?.data?.statusCode === 200) {
+      message.success("Report submitted successfully");
+      form.resetFields();
+      setClickedLatLng(null)
+    } else {
+      message.error(reportResponse?.data.message)
+    }
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -68,16 +84,16 @@ const Report = () => {
               ]}
             >
               <Radio.Group>
-                <Radio value="Arson">Arson</Radio>
-                <Radio value="Burglary">Burglary</Radio>
-                <Radio value="Drugs">Drugs</Radio>
-                <Radio value="Robbery">Robbery</Radio>
-                <Radio value="Assault">Assault</Radio>
-                <Radio value="Disturbing the Peace">Disturbing the Peace</Radio>
-                <Radio value="Alcohol Violations Theft">
-                  Alcohol Violations Theft
+                <Radio value="ARSON">Arson</Radio>
+                <Radio value="BURGLARY">Burglary</Radio>
+                <Radio value="DRUG_ALCOHAL">Drugs Alcohol</Radio>
+                <Radio value="ROBBERY">Robbery</Radio>
+                <Radio value="ASSAULT">Assault</Radio>
+                <Radio value="DISTRIBUTING_THE_PEACE">Disturbing the Peace</Radio>
+                <Radio value="VOILATIONS_THEFT">
+                   Violations Theft
                 </Radio>
-                <Radio value="Sex Crime">Sex Crime</Radio>
+                <Radio value="SEX_CRIME">Sex Crime</Radio>
               </Radio.Group>
             </Form.Item>
 

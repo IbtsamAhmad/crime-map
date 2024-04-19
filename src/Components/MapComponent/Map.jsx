@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { GoogleMap, LoadScript, Marker , InfoWindow} from "@react-google-maps/api";
+import {
+  GoogleMap,
+  LoadScript,
+  Marker,
+  InfoWindow,
+} from "@react-google-maps/api";
 import MyLocation from "./MyLocation";
 import { Spin } from "antd";
 import axios from "axios";
 
-const Map = () => {
+
+const Map = ({ filteredCrimes, selectedCrime, handleCrimeClick, setSelectedCrime }) => {
   const [currentPosition, setCurrentPosition] = useState(null);
   const [policeStations, setPoliceStations] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -62,18 +68,16 @@ const Map = () => {
     lng: 150.644,
   };
 
-
   const handleClick = (event) => {
-    console.log("event.latLng.lat()", event.latLng.lat())
+    console.log("event.latLng.lat()", event.latLng.lat());
     setClickedLatLng({
       lat: event.latLng.lat(),
-      lng: event.latLng.lng()
+      lng: event.latLng.lng(),
     });
   };
 
   const handleStationClick = (station) => {
-    console.log("station", station)
-     setSelectedStation(station);
+    setSelectedStation(station);
   };
 
   return (
@@ -87,7 +91,7 @@ const Map = () => {
             zoom={12}
             onClick={handleClick}
           >
-           {clickedLatLng && <Marker position={clickedLatLng} />}
+            {clickedLatLng && <Marker position={clickedLatLng} />}
             {currentPosition && (
               <Marker
                 position={currentPosition}
@@ -113,6 +117,24 @@ const Map = () => {
               />
             ))}
 
+            {filteredCrimes.length &&
+              filteredCrimes?.map((crime, index) => {
+                return (
+                  <Marker
+                    key={index}
+                    position={{
+                      lat: crime.lat,
+                      lng: crime.lng,
+                    }}
+                    icon={{
+                      url: "/crime2.png",
+                      // scaledSize: new window.google.maps.Size(30, 30),
+                    }}
+                    onClick={() => handleCrimeClick(crime)}
+                  />
+                );
+              })}
+
             {selectedStation && (
               <InfoWindow
                 position={{
@@ -124,6 +146,22 @@ const Map = () => {
                 <div>
                   <h2 className="station-info">{selectedStation.name}</h2>
                   <p className="station-info">{selectedStation.vicinity}</p>
+                </div>
+              </InfoWindow>
+            )}
+
+            {selectedCrime && (
+              <InfoWindow
+                position={{
+                  lat: selectedCrime?.lat,
+                  lng: selectedCrime?.lng,
+                }}
+                onCloseClick={() => setSelectedCrime(null)}
+              >
+                <div>
+                  <h2 className="station-info">{selectedCrime.type}</h2>
+                  <p className="station-info">{selectedCrime.description}</p>
+                  <p className="station-info">{selectedCrime.date.split('T')[0]}</p>
                 </div>
               </InfoWindow>
             )}
