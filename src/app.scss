@@ -71,6 +71,7 @@
     }
 
     .dashboard-colTwo {
+
         .dashboard-btn {
             display: flex;
             align-items: center;
@@ -198,3 +199,22 @@
 .station-info{
     color: #000;
 }
+
+.ant-select-item-option{
+    align-items: center !important;
+    }
+
+    .crime-maps-containers{
+        
+    }
+
+    .userCrimes-container {
+        padding: 20px;
+        background: #fff;
+        color: #000;
+        border-radius: 20px;
+        .ant-collapse-header-text{
+            text-align: left !important;
+        }
+    
+    }

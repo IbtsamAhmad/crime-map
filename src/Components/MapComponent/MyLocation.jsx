@@ -13,7 +13,7 @@ function LatLon(){
 
     return(
         <div>
-            <h1>My Location {lat} location {lon}</h1>
+            <h1>My Location {lat}, {lon}</h1>
         </div>
     );
 }

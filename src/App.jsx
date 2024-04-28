@@ -16,6 +16,7 @@ import { ConfigProvider } from "antd";
 import Report from "./pages/Report.jsx";
 import Home from "./pages/Home.jsx";
 import Reports from "./pages/Reports.jsx";
+import UserCrimes from "./pages/UserCrimes.jsx";
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
               <Route path="/report" element={<Report />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/user-crimes" element={<UserCrimes />} />
             </Routes>
           </div>
         </ConfigProvider>

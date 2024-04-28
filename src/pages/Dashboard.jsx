@@ -99,16 +99,20 @@ const Dashboard = () => {
                   style={{ width: "100%", textAlign: "left" }}
                   onChange={onChangeCrimeType}
                 >
-                  <Option value="ARSON">Arson</Option>
-                  <Option value="BURGLARY">Burglary</Option>
-                  <Option value="DRUG_ALCOHAL">Drugs Alcohol</Option>
-                  <Option value="ROBBERY">Robbery</Option>
-                  <Option value="ASSAULT">Assault</Option>
+                  <Option value="ARSON">
+                  <img src="/arson.jpg" alt="" style={{width:"30px", height:"20px", marginRight:"5px"}}/>
+                  Arson</Option>
+                  <Option value="BURGLARY">
+                  <img src="/burglary.png" alt="" style={{width:"30px", height:"20px", marginRight:"5px"}}/>
+                  Burglary</Option>
+                  <Option value="DRUG_ALCOHAL"> <img src="/drugsalcohol.jpg" alt="" style={{width:"30px", height:"20px", marginRight:"5px"}}/>Drugs Alcohol</Option>
+                  <Option value="ROBBERY">  <img src="/robbery.png" alt="" style={{width:"30px", height:"20px", marginRight:"5px"}}/>Robbery</Option>
+                  <Option value="ASSAULT">  <img src="/assaullt.png" alt="" style={{width:"30px", height:"20px", marginRight:"5px"}}/>Assault</Option>
                   <Option value="DISTRIBUTING_THE_PEACE">
-                    Disturbing the Peace
+                  <img src="/disturbingpeace.jpg" alt="" style={{width:"30px", height:"20px", marginRight:"5px"}}/> Disturbing the Peace
                   </Option>
-                  <Option value="VOILATIONS_THEFT">Violations Theft</Option>
-                  <Option value="SEX_CRIME">Sex Crime</Option>
+                  <Option value="VOILATIONS_THEFT"> <img src="/theft.png" alt="" style={{width:"30px", height:"20px", marginRight:"5px"}}/> Violations Theft</Option>
+                  <Option value="SEX_CRIME">  <img src="/sexcrime.png" alt="" style={{width:"30px", height:"20px", marginRight:"5px"}}/>Sex Crime</Option>
                 </Select>
                 <Select
                   size="large"

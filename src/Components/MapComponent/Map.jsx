@@ -8,9 +8,14 @@ import {
 import MyLocation from "./MyLocation";
 import { Spin } from "antd";
 import axios from "axios";
+import { getIconUrl } from "../../utils";
 
-
-const Map = ({ filteredCrimes, selectedCrime, handleCrimeClick, setSelectedCrime }) => {
+const Map = ({
+  filteredCrimes,
+  selectedCrime,
+  handleCrimeClick,
+  setSelectedCrime,
+}) => {
   const [currentPosition, setCurrentPosition] = useState(null);
   const [policeStations, setPoliceStations] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -80,8 +85,9 @@ const Map = ({ filteredCrimes, selectedCrime, handleCrimeClick, setSelectedCrime
     setSelectedStation(station);
   };
 
+  // console.log("filteredCrimes", filteredCrimes);
   return (
-    <div>
+    <div className="crime-maps-containers">
       <Spin spinning={loading}>
         <MyLocation />
         <LoadScript googleMapsApiKey="AIzaSyCTEWtP6KeqpC0-FWrdcfqd0r5_fY02oUY">
@@ -118,6 +124,27 @@ const Map = ({ filteredCrimes, selectedCrime, handleCrimeClick, setSelectedCrime
             ))}
 
             {filteredCrimes.length &&
+              filteredCrimes.map((crime, index) => {
+                const iconUrl = getIconUrl(crime.type);
+
+                return (
+                  <Marker
+                    key={index}
+                    position={{
+                      lat: crime.lat,
+                      lng: crime.lng,
+                    }}
+                    icon={{
+                      url: iconUrl,
+                      className: "crime-icon",
+                      // scaledSize: new window.google.maps.Size(30, 30),
+                    }}
+                    onClick={() => handleCrimeClick(crime)}
+                  />
+                );
+              })}
+
+            {/* {filteredCrimes.length &&
               filteredCrimes?.map((crime, index) => {
                 return (
                   <Marker
@@ -133,7 +160,7 @@ const Map = ({ filteredCrimes, selectedCrime, handleCrimeClick, setSelectedCrime
                     onClick={() => handleCrimeClick(crime)}
                   />
                 );
-              })}
+              })} */}
 
             {selectedStation && (
               <InfoWindow
@@ -159,9 +186,12 @@ const Map = ({ filteredCrimes, selectedCrime, handleCrimeClick, setSelectedCrime
                 onCloseClick={() => setSelectedCrime(null)}
               >
                 <div>
+                  <img src={getIconUrl(selectedCrime.type)} alt=""  style={{width:"30px", height:"30px"}}/>
                   <h2 className="station-info">{selectedCrime.type}</h2>
                   <p className="station-info">{selectedCrime.description}</p>
-                  <p className="station-info">{selectedCrime.date.split('T')[0]}</p>
+                  <p className="station-info">
+                    {selectedCrime.date.split("T")[0]}
+                  </p>
                 </div>
               </InfoWindow>
             )}
